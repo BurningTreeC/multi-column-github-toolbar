@@ -6,7 +6,7 @@ title: $:/plugins/BTC/multi-column-github-toolbar/ui/SimpleSearch
 <$list filter="[all[tiddlers]!is[system]!is[draft]!sort[modified]] +[limit[7]]">
 <div>
 <span class={{{[<currentTiddler>addsuffix[-primaryList]] -[<searchListState>get[text]] +[then[]else[tc-list-item-selected]] }}}>
-<$link to=<<currentTiddler>>><div class="btc-tiddler-svg">{{$:/_tiddler-svg}}</div><div class="btc-tiddler-title"><$text text=<<currentTiddler>>/></div><div class="btc-tiddler-jump-to"><kbd>Jump to ↵</kbd></div></$link>
+<$link to=<<currentTiddler>>><div class="btc-tiddler-svg">{{$:/plugins/BTC/multi-column-github-toolbar/icons/tiddler}}</div><div class="btc-tiddler-title"><$text text=<<currentTiddler>>/></div><div class="btc-tiddler-jump-to"><kbd>Jump to ↵</kbd></div></$link>
 </span>
 </div>
 </$list>
