@@ -1,0 +1,17 @@
+title: $:/plugins/BTC/multi-column-github-toolbar/ui/SearchResultsList
+caption: {{$:/language/Search/DefaultResults/Caption}}
+first-search-filter: [!is[system]search<userInput>sort[title]limit[250]]
+
+\define searchResultList()
+\whitespace trim
+
+<$list filter="[<userInput>minlength[1]]" variable="ignore">
+<$list filter={{{ [<configTiddler>get[first-search-filter]] }}}>
+<span class={{{[<currentTiddler>addsuffix[-primaryList]] -[<searchListState>get[text]] +[then[]else[tc-list-item-selected]] }}}>
+<$transclude tiddler="$:/plugins/BTC/multi-column-github-toolbar/ui/ListItemTemplate"/>
+</span>
+</$list>
+</$list>
+
+\end
+<<searchResultList>>
