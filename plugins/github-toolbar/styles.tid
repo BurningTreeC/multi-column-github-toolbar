@@ -37,6 +37,14 @@ tags: $:/tags/Stylesheet
 	fill: hsl(210, 66.7%, 96.5%);
 }
 
+.btc-top-github-header-item.btc-top-github-header-item-system-hamburger svg, .btc-top-github-header-item.btc-top-github-header-item-user-hamburger svg {
+	fill: hsl(210, 66.7%, 96.5%);
+}
+
+.btc-top-github-header-item.btc-top-github-header-item-system-hamburger:hover svg, .btc-top-github-header-item.btc-top-github-header-item-user-hamburger:hover svg {
+	fill: hwb(0 100% 0% / 0.7);
+}
+
 .btc-top-github-header-item.btc-top-github-header-item-full {
 	flex: auto;
 	width: 100%;
@@ -191,7 +199,7 @@ margin-right: 16px;
 }
 
 .btc-top-github-header-item.btc-top-github-header-item-new button.tc-btn-invisible svg, .btc-top-github-header-item.btc-top-github-header-item-notification button.tc-btn-invisible svg {
-font-weight: 600;
+	font-weight: 600;
 	fill: hsl(210, 66.7%, 96.5%);
 }
 

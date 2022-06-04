@@ -1,12 +1,30 @@
 title: $:/plugins/BTC/multi-column-github-toolbar/ui/TopToolBar
 tags: $:/tags/TopToolbar
+hamburgers: yes
 
 \define change-ensemble-actions()
 <<btc-load-story-actions>>
 \end
+\define system-hamburger(rightOrLeft)
+<$list filter="[{$:/config/panel/disable}!match[yes]]" variable="ignore">
+	<div class="btc-top-github-header-item btc-top-github-header-item-system-hamburger">
+		<$button class="btc-panel-show tc-btn-invisible" actions=<<sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
+	</div>
+</$list>
+\end
+\define user-hamburger(rightOrLeft)
+<$list filter="[all[tiddlers+shadows]tag[$:/tags/SideBarSegment/User]!is[draft]] +[limit[1]]" variable="ignore">
+	<div class="btc-top-github-header-item btc-top-github-header-item-user-hamburger">
+		<$button class="btc-user-panel-show tc-btn-invisible" actions=<<user-sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
+	</div>
+</$list>
+\end
 \whitespace trim
 <$navigator story={{{ [[$:/StoryList-]addsuffix{$:/columns!!active-column}!match[$:/StoryList-]!match[$:/StoryList-1]] ~$:/StoryList }}} history={{{ [[$:/HistoryList-]addsuffix{$:/columns!!active-column}!match[$:/HistoryList-]!match[$:/HistoryList-1]] ~$:/HistoryList }}} openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
 <header class="btc-top-github-header">
+<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<system-hamburger "right">>>
+<<user-hamburger "right">>
+</$list>
 <div class="btc-top-github-header-item btc-top-github-header-item-hamburger">
 {{$:/plugins/BTC/multi-column-github-toolbar/icons/hamburger}}
 </div>
@@ -116,5 +134,8 @@ Help
 </summary>
 </$reveal>
 </div>
+<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<user-hamburger "left">>>
+<<system-hamburger "left">>
+</$list>
 </header>
 </$navigator>
