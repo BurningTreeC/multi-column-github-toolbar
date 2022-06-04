@@ -352,7 +352,7 @@ width: 100%;
 
 @media (min-width: 800px) {
 
-.btc-github-hamburger {
+.btc-top-github-header-item-hamburger {
 display: none;
 }
 
@@ -365,11 +365,11 @@ padding-right: 16px;
 padding-left: 16px;
 }
 
-.btc-github-hamburger svg {
+.btc-top-github-header-item-hamburger svg {
 fill: hsl(210, 66.7%, 96.5%);
 }
 
-.btc-github-hamburger:hover svg {
+.btc-top-github-header-item-hamburger:hover svg {
 fill: hwb(0 100% 0% / 0.7);
 }
 
