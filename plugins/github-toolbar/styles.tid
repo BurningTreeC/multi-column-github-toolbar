@@ -391,9 +391,21 @@ margin-top: 1px;
 	display: none;
 }
 
-.btc-top-github-header-item.btc-top-github-header-item-notification {
+<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore">
+
+.btc-top-github-header-item.btc-top-github-header-item-system-hamburger {
 	margin-right: 0;
 }
+
+</$list>
+
+<$list filter="[[$:/config/panel/position]get[text]match[left]]" variable="ignore">
+
+.btc-top-github-header-item.btc-top-github-header-item-user-hamburger {
+	margin-right: 0;
+}
+
+</$list>
 
 .btc-top-github-header-item-icon {
 	flex: auto;
