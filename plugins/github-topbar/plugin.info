@@ -1,0 +1,7 @@
+{
+	"title": "$:/plugins/BTC/multi-column-github-toolbar",
+	"description": "A ~GitHub styled Top Toolbar",
+	"author": "Simon Huber",
+	"version": "0.1.0",
+	"list": "readme license"
+}
