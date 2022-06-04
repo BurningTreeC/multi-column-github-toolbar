@@ -27,7 +27,7 @@ tags: $:/tags/TopToolbar
 <$list filter="[all[tiddlers]!is[draft]tag[ToDo]!tag[Done]] +[limit[1]]" emptyMessage="""
 <$button class="tc-btn-invisible" tooltip="All cleared up">{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}</$button>
 """>
-<$button class="tc-btn-invisible" tooltip="There are open tasks"><$list filter="[all[tiddlers]tag[ToDo]!tag[Done]]"><$action-navigate $to=<<currentTiddler>>/></$list><span class="mail-status unread"/>{{$:/_notification-icon}}</$button>
+<$button class="tc-btn-invisible" tooltip="There are open tasks"><$list filter="[all[tiddlers]tag[ToDo]!tag[Done]]"><$action-navigate $to=<<currentTiddler>>/></$list><span class="mail-status unread"/>{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}</$button>
 </$list>
 </div>
 <div class="btc-top-github-header-item btc-top-github-header-item-new">
