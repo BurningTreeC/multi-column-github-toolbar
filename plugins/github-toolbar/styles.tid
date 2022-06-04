@@ -264,6 +264,11 @@ text-align: left;
   color: hsl(210, 17.4%, 82%);
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+.btc-dropdown-menu-section a {
+  text-decoration: none;
 }
 
 .avatar {

@@ -93,6 +93,19 @@ Editing as
 </div>
 <div class="dropdown-divider"/>
 <div class="btc-dropdown-menu-section">
+<a href="https://tiddlywiki.com/upgrade" target="_blank">
+<div class="btc-dropdown-menu-item">
+Upgrade
+</div>
+</a>
+<a href="https://tiddlywiki.com" target="_blank">
+<div class="btc-dropdown-menu-item">
+Help
+</div>
+</a>
+</div>
+<div class="dropdown-divider"/>
+<div class="btc-dropdown-menu-section">
 <div class="btc-dropdown-menu-item">
 <$button message="tm-save-wiki" class="tc-btn-invisible">Save Wiki</$button>
 </div>
