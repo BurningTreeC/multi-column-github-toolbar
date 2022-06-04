@@ -1,0 +1,9 @@
+title: $:/UserPanel
+
+<div class="btc-user-panel-avatar">
+{{$:/ProfilePicture}}
+</div>
+<h1 class="btc-user-panel-username">
+<$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>
+<$button class="btc-user-panel-username-edit-button" message="tm-edit-tiddler" param="$:/status/UserName">Edit</$button>
+</h1>

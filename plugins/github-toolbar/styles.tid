@@ -392,3 +392,22 @@ justify-content: center;
 }
 
 }
+
+.btc-user-panel-avatar img {
+  width: 100%;
+  height: auto;
+  max-width: 296px;
+  border-radius: 50%;
+}
+
+.btc-user-panel-username-edit-button {
+  display: none;
+}
+
+.btc-user-panel-username:hover .btc-user-panel-username-edit-button {
+  display: inline-block;
+  position: relative;
+  font-size: 0.5em;
+  top: -15px;
+  left: -5px;
+}

@@ -62,7 +62,7 @@ Import
 <div class="btc-top-github-header-item btc-top-github-header-item-avatar">
 <$button class="tc-btn-invisible" popup="$:/state/top-header-popup/avatar">
 <div class="avatar">
-{{$:/profile-picture}}
+{{$:/ProfilePicture}}
 </div>
 <div class="dropdown-caret-wrapper">
 <span class="dropdown-caret"/>
