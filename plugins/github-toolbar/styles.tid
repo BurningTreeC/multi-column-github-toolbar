@@ -414,11 +414,18 @@ margin-top: 1px;
 
 }
 
+.btc-user-panel-avatar {
+	max-width: 296px;
+	max-height: 296px;
+}
+
 .btc-user-panel-avatar img {
 	width: 100%;
 	height: auto;
 	max-width: 296px;
+	max-height: 296px;
 	border-radius: 50%;
+	aspect-ratio: 1 / 1;
 }
 
 .btc-user-panel-username-edit-button {
