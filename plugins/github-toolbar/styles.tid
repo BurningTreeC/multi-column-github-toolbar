@@ -309,6 +309,7 @@ margin-top: 1px;
 .avatar img {
 	width: 20px;
 	height: 20px;
+	aspect-ratio: 1 / 1;
 }
 
 .btc-top-github-header-item .btc-panel-show {
