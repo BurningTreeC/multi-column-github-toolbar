@@ -21,121 +21,224 @@ hamburgers: yes
 \end
 \whitespace trim
 <$navigator story={{{ [[$:/StoryList-]addsuffix{$:/columns!!active-column}!match[$:/StoryList-]!match[$:/StoryList-1]] ~$:/StoryList }}} history={{{ [[$:/HistoryList-]addsuffix{$:/columns!!active-column}!match[$:/HistoryList-]!match[$:/HistoryList-1]] ~$:/HistoryList }}} openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
-<header class="btc-top-github-header">
-<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<system-hamburger "right">>>
-<<user-hamburger "right">>
-</$list>
-<div class="btc-top-github-header-item btc-top-github-header-item-hamburger">
-{{$:/plugins/BTC/multi-column-github-toolbar/icons/hamburger}}
-</div>
-<div class="btc-top-github-header-item btc-top-github-header-item-icon">
-{{$:/core/icon}}
-</div>
-<div class="btc-top-github-header-item btc-top-github-header-item-full">
-<div class="header-search">
-{{$:/plugins/BTC/multi-column-github-toolbar/ui/SimpleSearch}}
-</div>
-<$list filter="[all[tiddlers]prefix[$:/Story/]]" variable="storyTiddler">
-<div class="btc-top-github-header-item-nav">
-<$button class="tc-btn-invisible" actions=<<change-ensemble-actions>>><$text text={{{ [<storyTiddler>removeprefix[$:/Story/]] }}}/></$button>
-</div>
-</$list>
-</div>
-<div class="btc-top-github-header-item btc-top-github-header-item-notification">
-<$list filter="[all[tiddlers]!is[draft]tag[ToDo]!tag[Done]] +[limit[1]]" emptyMessage="""
-<$button class="tc-btn-invisible" tooltip="All cleared up">{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}</$button>
-""">
-<$button class="tc-btn-invisible" tooltip="There are open tasks"><$list filter="[all[tiddlers]tag[ToDo]!tag[Done]]"><$action-navigate $to=<<currentTiddler>>/></$list><span class="mail-status unread"/>{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}</$button>
-</$list>
-</div>
-<div class="btc-top-github-header-item btc-top-github-header-item-new">
-<$button class="tc-btn-invisible" popup="$:/state/top-header-popup/new">
-{{$:/plugins/BTC/multi-column-github-toolbar/icons/add}}
-<div class="dropdown-caret-wrapper">
-<span class="dropdown-caret"/>
-</div>
-</$button>
-<$reveal type="popup" state="$:/state/top-header-popup/new" position="belowleft" class="tc-popup-keep dropdown-menu dropdown-menu-sw">
-<summary>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-tiddler}}>New Card</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-journal}}>New Journal</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-image}}>New Image</$button>
-</div>
-<div class="btc-dropdown-menu-item btc-dropdown-menu-item-import">
-<div class="tc-file-input-wrapper">
-<$button class="tc-btn-invisible">
-Import
-</$button>
-<$browse tooltip={{$:/language/Buttons/Import/Hint}}/>
-</div>
-</div>
-</summary>
-</$reveal>
-</div>
-<div class="btc-top-github-header-item btc-top-github-header-item-avatar">
-<$button class="tc-btn-invisible" popup="$:/state/top-header-popup/avatar">
-<div class="avatar">
-{{$:/ProfilePicture}}
-</div>
-<div class="dropdown-caret-wrapper">
-<span class="dropdown-caret"/>
-</div>
-</$button>
-<$reveal type="popup" state="$:/state/top-header-popup/avatar" position="belowleft" class="tc-popup-keep dropdown-menu dropdown-menu-sw">
-<summary>
-<div class="btc-dropdown-menu-section">
-<div class="btc-dropdown-menu-section-user">
-Editing as
-<$button class="tc-btn-invisible"><$action-navigate $to="$:/UserPanel"/><$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/></$button>
-</div>
-</div>
-<div class="dropdown-divider"/>
-<div class="btc-dropdown-menu-section">
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible"><$action-navigate $to="$:/ControlPanel"/>Control Panel</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible"><$action-navigate $to="$:/TagManager"/>Tag Manager</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible"><$action-navigate $to="$:/Manager"/>Card Manager</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button class="tc-btn-invisible"><$action-navigate $to="$:/AdvancedSearch"/>Advanced Search</$button>
-</div>
-</div>
-<div class="dropdown-divider"/>
-<div class="btc-dropdown-menu-section">
-<a href="https://tiddlywiki.com/upgrade" target="_blank">
-<div class="btc-dropdown-menu-item">
-Upgrade
-</div>
-</a>
-<a href="https://tiddlywiki.com" target="_blank">
-<div class="btc-dropdown-menu-item">
-Help
-</div>
-</a>
-</div>
-<div class="dropdown-divider"/>
-<div class="btc-dropdown-menu-section">
-<div class="btc-dropdown-menu-item">
-<$button message="tm-save-wiki" class="tc-btn-invisible">Save Wiki</$button>
-</div>
-<div class="btc-dropdown-menu-item">
-<$button message="tm-browser-refresh" class="tc-btn-invisible">Reload Wiki</$button>
-</div>
-</div>
-</summary>
-</$reveal>
-</div>
-<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<user-hamburger "left">>>
-<<system-hamburger "left">>
-</$list>
-</header>
+	<header class="btc-top-github-header">
+		<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<system-hamburger "right">>>
+			<<user-hamburger "right">>
+		</$list>
+		<div class="btc-top-github-header-item btc-top-github-header-item-hamburger">
+			<$button class="tc-btn-invisible">
+				<$list filter="[{$:/state/github-toolbar}!match[yes]]" variable="ignore" emptyMessage="""
+					<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
+				""">
+					<$action-setfield $tiddler="$:/state/github-toolbar" text="yes"/>
+				</$list>
+				{{$:/plugins/BTC/multi-column-github-toolbar/icons/hamburger}}
+			</$button>
+		</div>
+		<div class="btc-top-github-header-item btc-top-github-header-item-icon">
+			{{$:/core/icon}}
+		</div>
+		<div class="btc-top-github-header-item btc-top-github-header-item-full">
+			<div class="header-search">
+				{{$:/plugins/BTC/multi-column-github-toolbar/ui/SimpleSearch}}
+			</div>
+			<nav class="btc-top-github-header-nav">
+				<$list filter="[all[tiddlers]prefix[$:/Story/]!sort[modified]] +[limit[5]]" variable="storyTiddler">
+					<div class="btc-top-github-header-item-nav">
+						<$button class="tc-btn-invisible" actions=<<change-ensemble-actions>>>
+							<$text text={{{ [<storyTiddler>removeprefix[$:/Story/]] }}}/>
+						</$button>
+					</div>
+				</$list>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-tiddler}}>
+						<$text text="New Card"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-journal}}>
+						<$text text="New Journal"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-image}}>
+						<$text text="New Image"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible">
+						<div class="tc-file-input-wrapper">
+							<$text text="Import"/>
+							<$browse tooltip={{$:/language/Buttons/Import/Hint}}/>
+						</div>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible">
+						<$action-navigate $to="$:/ControlPanel"/>
+							<$text text="Control Panel"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible">
+						<$action-navigate $to="$:/TagManager"/>
+						<$text text="Tag Manager"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible">
+						<$action-navigate $to="$:/Manager"/>
+						<$text text="Card Manager"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible">
+						<$action-navigate $to="$:/AdvancedSearch"/>
+						<$text text="Advanced Search"/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button class="tc-btn-invisible"><$action-navigate $to="$:/UserPanel"/>
+						<div class="avatar">
+							{{$:/ProfilePicture}}
+						</div>
+						<$text text=" "/><$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>
+					</$button>
+				</div>
+				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
+					<$button message="tm-save-wiki" class="tc-btn-invisible">
+						{{$:/core/images/save-button}}<$text text=" "/><$text text="Save Wiki"/>
+					</$button>
+				</div>
+			</nav>
+		</div>
+		<div class="btc-top-github-header-item btc-top-github-header-item-notification">
+			<$list filter="[all[tiddlers]!is[draft]tag[ToDo]!tag[Done]] +[limit[1]]" emptyMessage="""
+				<$button class="tc-btn-invisible" tooltip="All cleared up">
+					{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}
+				</$button>
+			""">
+				<$button class="tc-btn-invisible" tooltip="There are open tasks">
+					<$list filter="[all[tiddlers]tag[ToDo]!tag[Done]]">
+						<$action-navigate $to=<<currentTiddler>>/>
+					</$list>
+					<span class="mail-status unread"/>
+					{{$:/plugins/BTC/multi-column-github-toolbar/icons/notification}}
+				</$button>
+			</$list>
+		</div>
+		<div class="btc-top-github-header-item btc-top-github-header-item-new">
+			<$button class="tc-btn-invisible" popup="$:/state/top-header-popup/new">
+				{{$:/plugins/BTC/multi-column-github-toolbar/icons/add}}
+				<div class="dropdown-caret-wrapper">
+					<span class="dropdown-caret"/>
+				</div>
+			</$button>
+			<$reveal type="popup" state="$:/state/top-header-popup/new" position="belowleft" class="tc-popup-keep dropdown-menu dropdown-menu-sw">
+				<summary>
+					<div class="btc-dropdown-menu-item">
+						<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-tiddler}}>
+							<$text text="New Card"/>
+						</$button>
+					</div>
+					<div class="btc-dropdown-menu-item">
+						<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-journal}}>
+							<$text text="New Journal"/>
+						</$button>
+					</div>
+					<div class="btc-dropdown-menu-item">
+						<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-image}}>
+							<$text text="New Image"/>
+						</$button>
+					</div>
+					<div class="btc-dropdown-menu-item btc-dropdown-menu-item-import">
+						<div class="tc-file-input-wrapper">
+							<$button class="tc-btn-invisible">
+								<$text text="Import"/>
+							</$button>
+							<$browse tooltip={{$:/language/Buttons/Import/Hint}}/>
+						</div>
+					</div>
+				</summary>
+			</$reveal>
+		</div>
+		<div class="btc-top-github-header-item btc-top-github-header-item-avatar">
+			<$button class="tc-btn-invisible" popup="$:/state/top-header-popup/avatar">
+				<div class="avatar">
+					{{$:/ProfilePicture}}
+				</div>
+				<div class="dropdown-caret-wrapper">
+					<span class="dropdown-caret"/>
+				</div>
+			</$button>
+			<$reveal type="popup" state="$:/state/top-header-popup/avatar" position="belowleft" class="tc-popup-keep dropdown-menu dropdown-menu-sw">
+				<summary>
+					<div class="btc-dropdown-menu-section">
+						<div class="btc-dropdown-menu-section-user">
+							<$text text="Editing as"/>
+							<$button class="tc-btn-invisible"><$action-navigate $to="$:/UserPanel"/>
+								<$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>
+							</$button>
+						</div>
+					</div>
+					<div class="dropdown-divider"/>
+					<div class="btc-dropdown-menu-section">
+						<div class="btc-dropdown-menu-item">
+							<$button class="tc-btn-invisible">
+								<$action-navigate $to="$:/ControlPanel"/>
+									<$text text="Control Panel"/>
+							</$button>
+						</div>
+						<div class="btc-dropdown-menu-item">
+							<$button class="tc-btn-invisible">
+								<$action-navigate $to="$:/TagManager"/>
+								<$text text="Tag Manager"/>
+							</$button>
+						</div>
+						<div class="btc-dropdown-menu-item">
+							<$button class="tc-btn-invisible">
+								<$action-navigate $to="$:/Manager"/>
+								<$text text="Card Manager"/>
+							</$button>
+						</div>
+						<div class="btc-dropdown-menu-item">
+							<$button class="tc-btn-invisible">
+								<$action-navigate $to="$:/AdvancedSearch"/>
+								<$text text="Advanced Search"/>
+							</$button>
+						</div>
+					</div>
+					<div class="dropdown-divider"/>
+					<div class="btc-dropdown-menu-section">
+						<a href="https://tiddlywiki.com/upgrade" target="_blank">
+							<div class="btc-dropdown-menu-item">
+								<$text text="Upgrade"/>
+							</div>
+						</a>
+						<a href="https://tiddlywiki.com" target="_blank">
+							<div class="btc-dropdown-menu-item">
+								<$text text="Help"/>
+							</div>
+						</a>
+					</div>
+					<div class="dropdown-divider"/>
+					<div class="btc-dropdown-menu-section">
+						<div class="btc-dropdown-menu-item">
+							<$button message="tm-save-wiki" class="tc-btn-invisible">
+								<$text text="Save Wiki"/>
+							</$button>
+						</div>
+						<div class="btc-dropdown-menu-item">
+							<$button message="tm-browser-refresh" class="tc-btn-invisible">
+								<$text text="Reload Wiki"/>
+							</$button>
+						</div>
+					</div>
+				</summary>
+			</$reveal>
+		</div>
+		<$list filter="[[$:/config/panel/position]get[text]match[right]]" variable="ignore" emptyMessage=<<user-hamburger "left">>>
+			<<system-hamburger "left">>
+		</$list>
+	</header>
 </$navigator>
