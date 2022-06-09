@@ -290,6 +290,7 @@ margin-top: 1px;
 .btc-dropdown-menu-section > a {
 	text-decoration: none;
 	font-weight: 400;
+	line-height: 1.2;
 }
 
 .avatar {
