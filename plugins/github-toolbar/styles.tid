@@ -188,6 +188,8 @@ tags: $:/tags/Stylesheet
 	font-size: 12px;
 	box-shadow: none;
 	color: hsl(211.6, 8.9%, 58.2%);
+	border: 1px solid hsl(212.3, 11.9%, 21.4%);
+	border-radius: 6px;
 }
 
 .btc-top-github-header-item .btc-top-github-header-item-nav button.tc-btn-invisible {
