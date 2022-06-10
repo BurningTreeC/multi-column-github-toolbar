@@ -190,6 +190,7 @@ tags: $:/tags/Stylesheet
 	color: hsl(211.6, 8.9%, 58.2%);
 	border: 1px solid hsl(212.3, 11.9%, 21.4%);
 	border-radius: 6px;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
 
 .btc-top-github-header-item .btc-top-github-header-item-nav button.tc-btn-invisible {

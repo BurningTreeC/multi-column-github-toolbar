@@ -46,22 +46,26 @@ hamburgers: yes
 				<$list filter="[all[tiddlers]prefix[$:/Story/]!sort[modified]] +[limit[5]]" variable="storyTiddler">
 					<div class="btc-top-github-header-item-nav">
 						<$button class="tc-btn-invisible" actions=<<change-ensemble-actions>>>
+							<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 							<$text text={{{ [<storyTiddler>removeprefix[$:/Story/]] }}}/>
 						</$button>
 					</div>
 				</$list>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-tiddler}}>
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$text text="New Card"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-journal}}>
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$text text="New Journal"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible" actions={{$:/core/ui/Actions/new-image}}>
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$text text="New Image"/>
 					</$button>
 				</div>
@@ -75,30 +79,36 @@ hamburgers: yes
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$action-navigate $to="$:/ControlPanel"/>
 							<$text text="Control Panel"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$action-navigate $to="$:/TagManager"/>
 						<$text text="Tag Manager"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$action-navigate $to="$:/Manager"/>
 						<$text text="Card Manager"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$action-navigate $to="$:/AdvancedSearch"/>
 						<$text text="Advanced Search"/>
 					</$button>
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
-					<$button class="tc-btn-invisible"><$action-navigate $to="$:/UserPanel"/>
+					<$button class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
+						<$action-navigate $to="$:/UserPanel"/>
 						<div class="avatar">
 							{{$:/ProfilePicture}}
 						</div>
@@ -107,6 +117,7 @@ hamburgers: yes
 				</div>
 				<div class="btc-top-github-header-item-nav btc-top-github-header-item-nav-display">
 					<$button message="tm-save-wiki" class="tc-btn-invisible">
+						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						{{$:/core/images/save-button}}<$text text=" "/><$text text="Save Wiki"/>
 					</$button>
 				</div>
