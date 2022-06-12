@@ -4,8 +4,8 @@ tags: $:/tags/Stylesheet
 .btc-top-github-header {
 	display: flex;
 	padding: 16px;
-	padding-right: 32px;
-	padding-left: 32px;
+	padding-right: {{$:/config/github-toptoolbar/padding-right}};
+	padding-left: {{$:/config/github-toptoolbar/padding-left}};
 	line-height: 1.5;
 	color: hwb(0 100% 0% / 0.7);
 	background-color: hsl(215, 21.4%, 11%);
@@ -453,6 +453,7 @@ margin-top: 1px;
 	height: 38px;
 	margin-bottom: 32px;
 	margin-left: -40px;
+	font-size: 14px;
 }
 
 .user-status-circle-badge {
@@ -462,11 +463,53 @@ margin-top: 1px;
 	background-color: hsl(216, 27.8%, 7.1%);
 	border: 1px solid hsl(212.3, 11.9%, 21.4%);
 	border-radius: 2em;
-	box-shadow: var(--color-shadow-small);
+	box-shadow: 0 3px 6px #010409;
+	width: 100%;
+	height: 100%;
+}
+
+.user-status-circle-badge-flex {
+	display: flex;
+	align-items: stretch;
+}
+
+.user-status-circle-badge-icon {
+	display: inline-flex;
+	line-height: 1.25;
+	border-radius: 50%;
+	font-size: 12px;
 }
 
 .user-status-circle-badge summary {
 	list-style: none;
+}
+
+.user-status-circle-badge-container .user-status-message-wrapper {
+	width: 0;
+	padding-top: 0;
+	overflow: hidden;
+	line-height: 20px;
+	opacity: 0;
+	transition: .1s ease;
+	white-space: normal;
+	font-size: 12px;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.user-status-circle-badge:hover {
+	width: auto;
+}
+
+.user-status-circle-badge:hover .user-status-message-wrapper {
+	width: 100%;
+	opacity: 1;
+}
+
+.user-status-circle-badge-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .btc-user-panel-username-edit-button {

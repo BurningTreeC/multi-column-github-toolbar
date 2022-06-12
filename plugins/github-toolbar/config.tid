@@ -1,0 +1,9 @@
+title: $:/plugins/BTC/multi-column-github-toolbar/config
+
+!!! Top Toolbar padding left
+
+<$edit-text tag="input" default="" tiddler="$:/config/github-toptoolbar/padding-left" placeholder="padding left"/>
+
+!!! Top Toolbar padding right
+
+<$edit-text tag="input" default="" tiddler="$:/config/github-toptoolbar/padding-right" placeholder="padding right"/>
