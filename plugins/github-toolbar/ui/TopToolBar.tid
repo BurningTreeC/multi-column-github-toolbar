@@ -110,7 +110,11 @@ hamburgers: yes
 						<$action-deletetiddler $tiddler="$:/state/github-toolbar"/>
 						<$action-navigate $to="$:/UserPanel"/>
 						<div class="avatar">
-							{{$:/ProfilePicture}}
+							<$list filter="[[$:/ProfilePicture]!is[missing]]" variable="ignore" emptyMessage="""
+								{{$:/plugins/BTC/multi-column-github-toolbar/images/avatar.png}}
+							""">
+								{{$:/ProfilePicture}}
+							</$list>
 						</div>
 						<$text text=" "/><$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>
 					</$button>
@@ -176,7 +180,11 @@ hamburgers: yes
 		<div class="btc-top-github-header-item btc-top-github-header-item-avatar">
 			<$button class="tc-btn-invisible" popup="$:/state/top-header-popup/avatar">
 				<div class="avatar">
-					{{$:/ProfilePicture}}
+					<$list filter="[[$:/ProfilePicture]!is[missing]]" variable="ignore" emptyMessage="""
+						{{$:/plugins/BTC/multi-column-github-toolbar/images/avatar.png}}
+					""">
+						{{$:/ProfilePicture}}
+					</$list>
 				</div>
 				<div class="dropdown-caret-wrapper">
 					<span class="dropdown-caret"/>

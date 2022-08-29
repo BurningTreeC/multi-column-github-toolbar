@@ -1,7 +1,11 @@
 title: $:/UserPanel
 
 <div class="btc-user-panel-avatar">
+<$list filter="[[$:/ProfilePicture]!is[missing]]" variable="ignore" emptyMessage="""
+{{$:/plugins/BTC/multi-column-github-toolbar/images/avatar.png}}
+""">
 {{$:/ProfilePicture}}
+</$list>
 </div>
 <h1 class="btc-user-panel-username">
 <$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>
