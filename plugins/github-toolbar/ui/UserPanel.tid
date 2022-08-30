@@ -6,6 +6,7 @@ title: $:/UserPanel
 """>
 {{$:/ProfilePicture}}
 </$list>
+<$button class="btc-user-panel-avatar-edit-button" message="tm-edit-tiddler" param="$:/ProfilePicture">Edit</$button>
 </div>
 <h1 class="btc-user-panel-username">
 <$text text={{{ [[$:/status/UserName]get[text]] ~[[Username]] }}}/>

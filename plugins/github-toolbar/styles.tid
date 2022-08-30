@@ -512,7 +512,7 @@ margin-top: 1px;
 	white-space: nowrap;
 }
 
-.btc-user-panel-username-edit-button {
+.btc-user-panel-username-edit-button, .btc-user-panel-avatar-edit-button {
 	display: none;
 }
 
@@ -522,6 +522,13 @@ margin-top: 1px;
 	font-size: 0.5em;
 	top: -15px;
 	left: -5px;
+}
+
+.btc-user-panel-avatar:hover .btc-user-panel-avatar-edit-button {
+	display: inline-block;
+	position: relative;
+	top: -75px;
+	left: 250px;
 }
 
 .btc-top-github-header-nav {
