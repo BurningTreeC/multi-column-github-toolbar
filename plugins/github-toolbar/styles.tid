@@ -313,7 +313,7 @@ margin-top: 1px;
 	aspect-ratio: 1 / 1;
 }
 
-.btc-top-github-header-item .btc-panel-show {
+.btc-top-github-header-item .btc-panel-show, .btc-top-github-header-item .btc-user-panel-show {
 	position: relative;
 }
 
