@@ -7,16 +7,20 @@ hamburgers: yes
 \end
 \define system-hamburger(rightOrLeft)
 <$list filter="[{$:/config/panel/disable}!match[yes]]" variable="ignore">
-	<div class="btc-top-github-header-item btc-top-github-header-item-system-hamburger">
-		<$button class="btc-panel-show tc-btn-invisible" actions=<<sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
-	</div>
+	<$list filter="[{$:/state/panel/visibility}!match[yes]]" variable="ignore">
+		<div class="btc-top-github-header-item btc-top-github-header-item-system-hamburger">
+			<$button class="btc-panel-show tc-btn-invisible" actions=<<sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
+		</div>
+	</$list>
 </$list>
 \end
 \define user-hamburger(rightOrLeft)
 <$list filter="[all[tiddlers+shadows]tag[$:/tags/SideBarSegment/User]!is[draft]] +[limit[1]]" variable="ignore">
-	<div class="btc-top-github-header-item btc-top-github-header-item-user-hamburger">
-		<$button class="btc-user-panel-show tc-btn-invisible" actions=<<user-sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
-	</div>
+	<$list filter="[{$:/state/user-panel/visibility}!match[yes]]" variable="ignore">
+		<div class="btc-top-github-header-item btc-top-github-header-item-user-hamburger">
+			<$button class="btc-user-panel-show tc-btn-invisible" actions=<<user-sidebar-actions>>>{{$:/plugins/BTC/multi-column-github-toolbar/icons/chevron-$rightOrLeft$}}</$button>
+		</div>
+	</$list>
 </$list>
 \end
 \whitespace trim

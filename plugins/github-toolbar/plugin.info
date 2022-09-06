@@ -2,6 +2,6 @@
 	"title": "$:/plugins/BTC/multi-column-github-toolbar",
 	"description": "A GitHub styled Top Toolbar",
 	"author": "Simon Huber",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"list": "readme license config"
 }
