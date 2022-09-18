@@ -1,4 +1,4 @@
 title: $:/plugins/BTC/multi-column-github-toolbar/ui/ListItemTemplate
 
 \whitespace trim
-<$link to=<<currentTiddler>>><div class="btc-tiddler-svg">{{$:/_tiddler-svg}}</div><div class="btc-tiddler-title"><$text text=<<currentTiddler>>/></div><div class="btc-tiddler-jump-to"><kbd>Jump to ↵</kbd></div></$link>
+<$button class="btc-listitemtemplate-button" tag="a"><$action-deletetiddler $tiddler="$:/state/github-toolbar"/><$action-navigate $to=<<currentTiddler>>/><div class="btc-tiddler-svg">{{$:/plugins/BTC/multi-column-github-toolbar/icons/tiddler}}</div><div class="btc-tiddler-title"><$text text=<<currentTiddler>>/></div><div class="btc-tiddler-jump-to"><kbd>Jump to ↵</kbd></div></$button>

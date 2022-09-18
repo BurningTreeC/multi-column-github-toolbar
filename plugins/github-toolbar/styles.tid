@@ -541,6 +541,10 @@ margin-top: 1px;
 	display: none;
 }
 
+.btc-listitemtemplate-button {
+	cursor: pointer;
+}
+
 @media (max-width: 800px) {
 
 	.btc-top-github-header-item-nav-display {
